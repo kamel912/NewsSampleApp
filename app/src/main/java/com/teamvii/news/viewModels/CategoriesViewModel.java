@@ -14,7 +14,7 @@ public class CategoriesViewModel extends ViewModel {
     private CategoriesRepository repository;
 
     @Inject
-    public CategoriesViewModel(CategoriesRepository repository) {
+    CategoriesViewModel(CategoriesRepository repository) {
         this.repository = repository;
         categories = this.repository.getCategories();
     }

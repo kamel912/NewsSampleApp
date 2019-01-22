@@ -1,3 +1,16 @@
+project.ext {
+    appcompat = "28.0.0"
+    arch = "1.1.1"
+    retrofit = "2.5.0"
+    constraintLayout = "1.1.3"
+    dagger = "2.19"
+    picasso = "2.71828"
+    butterknife = "8.8.1"
+    navigation = "1.0.0-alpha09"
+}
+
+
+
 apply plugin: 'com.android.application'
 
 android {
@@ -16,32 +29,49 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
-    implementation "android.arch.lifecycle:extensions:1.1.1"
-    implementation "android.arch.navigation:navigation-fragment:1.0.0-alpha09"
-    implementation "android.arch.navigation:navigation-ui:1.0.0-alpha09"
+    implementation "com.android.support:appcompat-v7:$project.appcompat"
+    implementation "com.android.support:exifinterface:$project.appcompat"
+    implementation "com.android.support:support-v4:$project.appcompat"
+    implementation "com.android.support:design:$project.appcompat"
+    implementation "com.android.support:recyclerview-v7:$project.appcompat"
+    implementation "com.android.support:cardview-v7:$project.appcompat"
 
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation 'com.google.dagger:dagger:2.19'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
+    implementation "com.android.support.constraint:constraint-layout:$project.constraintLayout"
+
+    implementation "android.arch.lifecycle:runtime:$project.arch"
+    implementation "android.arch.lifecycle:extensions:$project.arch"
+    annotationProcessor "android.arch.lifecycle:compiler:$project.arch"
+
+    implementation "android.arch.navigation:navigation-fragment:$project.navigation"
+    implementation "android.arch.navigation:navigation-ui:$project.navigation"
 
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofit"
+
+    implementation "com.squareup.picasso:picasso:$project.picasso"
+
+    implementation "com.jakewharton:butterknife:$project.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$project.butterknife"
 
 
+    implementation "com.google.dagger:dagger:$project.dagger"
+    implementation "com.google.dagger:dagger-android:$project.dagger"
+    implementation "com.google.dagger:dagger-android-support:$project.dagger"
+
+    annotationProcessor "com.google.dagger:dagger-android-processor:$project.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$project.dagger"
+
+
+    testImplementation "junit:junit:4.12"
+    androidTestImplementation "com.android.support.test:runner:1.0.2"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
 }

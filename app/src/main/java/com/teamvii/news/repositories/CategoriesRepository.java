@@ -24,7 +24,7 @@ public class CategoriesRepository {
     private ApiService apiService;
 
     @Inject
-    public CategoriesRepository(ApiService apiService) {
+    CategoriesRepository(ApiService apiService) {
         this.apiService = apiService;
     }
 

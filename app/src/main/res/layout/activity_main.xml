@@ -6,26 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <fragment
         android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/mainTabHost"/>
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/mainTabHost"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" >
-        <android.support.design.widget.TabItem
-            android:id="@+id/categoriesTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@mipmap/category"/>
-    </android.support.design.widget.TabLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/navigation" />
+
 </android.support.constraint.ConstraintLayout>
