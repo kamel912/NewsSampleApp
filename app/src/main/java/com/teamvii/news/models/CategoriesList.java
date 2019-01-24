@@ -14,7 +14,7 @@ public class CategoriesList {
 
     @SerializedName("data")
     @Expose
-    private List<Category> categories ;
+    private List<Category> categories;
 
     public CategoriesMeta getCategoriesMeta() {
         return categoriesMeta;

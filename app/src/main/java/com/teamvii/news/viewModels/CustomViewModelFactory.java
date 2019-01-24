@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.v4.util.ArrayMap;
 
-
 import com.teamvii.news.di.ViewModelSubComponent;
 
 import java.util.Map;

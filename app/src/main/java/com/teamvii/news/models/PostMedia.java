@@ -9,9 +9,11 @@ public class PostMedia {
     @SerializedName("type")
     @Expose
     private String type;
+
     @SerializedName("url")
     @Expose
     private String url;
+
     @SerializedName("title")
     @Expose
     private String title;

@@ -17,5 +17,6 @@ public interface ViewModelSubComponent {
     }
 
     CategoriesViewModel categoriesViewModel();
+
     PostsViewModel postsViewModel();
 }

@@ -19,13 +19,13 @@ class AppModule {
 
     @Provides
     @Singleton
-    Gson provideGson(){
+    Gson provideGson() {
         return new Gson();
     }
 
     @Provides
     @Singleton
-    ApiService provideService(Gson gson){
+    ApiService provideService(Gson gson) {
         return new Retrofit.Builder()
                 .baseUrl(ApiKeys.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson))

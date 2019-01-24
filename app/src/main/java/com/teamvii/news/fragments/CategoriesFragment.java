@@ -21,10 +21,9 @@ import com.teamvii.news.viewModels.CategoriesViewModel;
 
 import javax.inject.Inject;
 
+import androidx.navigation.Navigation;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dagger.android.AndroidInjection;
-import dagger.android.support.AndroidSupportInjection;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,11 +44,6 @@ public class CategoriesFragment extends Fragment
 
     public CategoriesFragment() {
         // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -77,5 +71,8 @@ public class CategoriesFragment extends Fragment
     @Override
     public void onCategoryItemClicked(Category category) {
         Toast.makeText(getActivity(), String.valueOf(category.getId()), Toast.LENGTH_SHORT).show();
+        Bundle arguments = new Bundle();
+        arguments.putInt(getString(R.string.category_id), category.getId());
+        Navigation.findNavController(categoriesRecycler).navigate(R.id.action_categoriesFragment_to_postsFragment, arguments);
     }
 }

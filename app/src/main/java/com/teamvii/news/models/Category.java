@@ -8,7 +8,7 @@ public class Category {
 
     @SerializedName("id")
     @Expose
-    private Long id;
+    private int id;
 
     @SerializedName("name")
     @Expose
@@ -22,11 +22,11 @@ public class Category {
     @Expose
     private String description;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

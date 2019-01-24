@@ -1,9 +1,10 @@
 
 package com.teamvii.news.models;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Post {
 
@@ -24,7 +25,7 @@ public class Post {
     private String type;
     @SerializedName("category_id")
     @Expose
-    private Long categoryId;
+    private int categoryId;
     @SerializedName("tag")
     @Expose
     private List<Object> tag = null;
@@ -96,11 +97,11 @@ public class Post {
         this.type = type;
     }
 
-    public Long getCategoryId() {
+    public int getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
+    public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }
 
