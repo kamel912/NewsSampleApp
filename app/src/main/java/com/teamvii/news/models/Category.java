@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
 
 package com.teamvii.news.models;
 
@@ -53,5 +56,4 @@ public class Category {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }

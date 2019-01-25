@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
+
 package com.teamvii.news;
 
 import android.app.Activity;

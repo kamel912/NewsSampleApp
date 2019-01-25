@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
 
 package com.teamvii.news.models;
 
@@ -137,8 +140,8 @@ public class Post {
         this.viewCount = viewCount;
     }
 
-    public Long getLikeCount() {
-        return likeCount;
+    public String getLikeCount() {
+        return formatCount(likeCount);
     }
 
     public void setLikeCount(Long likeCount) {
@@ -153,8 +156,8 @@ public class Post {
         this.dislikeCount = dislikeCount;
     }
 
-    public Long getCommentCount() {
-        return commentCount;
+    public String getCommentCount() {
+        return formatCount(commentCount);
     }
 
     public void setCommentCount(Long commentCount) {
@@ -183,6 +186,21 @@ public class Post {
 
     public void setCreatedAt(Long createdAt) {
         this.createdAt = createdAt;
+    }
+
+
+    public String posterImage() {
+        return postMedia.get(1).getUrl();
+    }
+
+    public String authorImage() {
+        return postMedia.get(0).getUrl();
+    }
+
+    private String formatCount(Long count) {
+        if (count >= 10000)
+            return Long.toString(count / 1000) + "K";
+        return Long.toString(count);
     }
 
 }

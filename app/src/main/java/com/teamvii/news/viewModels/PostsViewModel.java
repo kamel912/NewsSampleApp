@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
+
 package com.teamvii.news.viewModels;
 
 import android.arch.lifecycle.LiveData;
@@ -19,6 +23,10 @@ public class PostsViewModel extends ViewModel {
 
     public void init(int categoryId, int pageNumber) {
         posts = this.repository.getPosts(categoryId, pageNumber);
+    }
+
+    public void loadMore(int categoryId, int pageNumber) {
+        posts = this.repository.loadPosts(categoryId, pageNumber);
     }
 
     public LiveData<PostsList> getPosts() {

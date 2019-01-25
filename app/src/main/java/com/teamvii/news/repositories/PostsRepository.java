@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
+
 package com.teamvii.news.repositories;
 
 import android.arch.lifecycle.LiveData;
@@ -21,18 +25,23 @@ import static com.teamvii.news.network.ApiKeys.APP_SECRET;
 
 @Singleton
 public class PostsRepository {
-    private ApiService apiService;
     private final String SORT_TYPE = "recent";
     private final int PAGE_LIMIT = 10;
     MutableLiveData<PostsList> data;
+    private ApiService apiService;
 
     @Inject
     PostsRepository(ApiService apiService) {
         this.apiService = apiService;
-        data = new MutableLiveData<>();
     }
 
     public LiveData<PostsList> getPosts(int categoryId, int pageNumber) {
+        data = new MutableLiveData<>();
+        loadPosts(categoryId, pageNumber);
+        return data;
+    }
+
+    public LiveData<PostsList> loadPosts(int categoryId, int pageNumber) {
         apiService.getPosts(categoryId, SORT_TYPE, pageNumber, PAGE_LIMIT, APP_ID, APP_SECRET, NetworkUtils.getSignature(
                 String.valueOf(categoryId),
                 SORT_TYPE,

@@ -1,21 +1,21 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
+
 package com.teamvii.news.adapters;
 
+import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
 import com.teamvii.news.R;
+import com.teamvii.news.databinding.CategoryItem;
 import com.teamvii.news.models.Category;
 
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder> {
 
@@ -34,20 +34,20 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.category_item, viewGroup, false);
-        return new CategoryViewHolder(view);
+        CategoryItem categoryItem = DataBindingUtil.inflate(
+                LayoutInflater.from(viewGroup.getContext()),
+                R.layout.category_item,
+                viewGroup,
+                false
+        );
+        return new CategoryViewHolder(categoryItem);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int position) {
         Category category = categories.get(position);
-        if (category.getImage() != null) {
-            Picasso.get()
-                    .load(category.getImage())
-                    .error(R.drawable.ic_error)
-                    .into(categoryViewHolder.categoryImage);
-        }
-        categoryViewHolder.categoryName.setText(category.getName());
+        categoryViewHolder.categoryItem.setCategory(category);
+        categoryViewHolder.categoryItem.executePendingBindings();
     }
 
     @Override
@@ -64,15 +64,12 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @BindView(R.id.categoryImage)
-        ImageView categoryImage;
-        @BindView(R.id.categoryName)
-        TextView categoryName;
+        CategoryItem categoryItem;
 
-        CategoryViewHolder(@NonNull View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(this);
+        CategoryViewHolder(CategoryItem categoryItem) {
+            super(categoryItem.getRoot());
+            this.categoryItem = categoryItem;
+            categoryItem.getRoot().setOnClickListener(this);
         }
 
         @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018. Marketune Egypt by Mohamed Kamel.
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
  */
 
 package com.teamvii.news.utilities.picassoTransformation;

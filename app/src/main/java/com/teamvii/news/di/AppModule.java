@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
+
 package com.teamvii.news.di;
 
 import android.arch.lifecycle.ViewModel;
@@ -7,7 +11,6 @@ import com.google.gson.Gson;
 import com.teamvii.news.network.ApiKeys;
 import com.teamvii.news.network.ApiService;
 import com.teamvii.news.viewModels.CustomViewModelFactory;
-import com.teamvii.news.viewModels.PostsViewModel;
 
 import java.util.Map;
 

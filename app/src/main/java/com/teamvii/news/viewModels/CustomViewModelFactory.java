@@ -1,22 +1,24 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
+
 package com.teamvii.news.viewModels;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
-import android.support.v4.util.ArrayMap;
-
-//import com.teamvii.news.di.ViewModelSubComponent;
 
 import java.util.Map;
-import java.util.concurrent.Callable;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
 import javax.inject.Singleton;
 
+//import com.teamvii.news.di.ViewModelSubComponent;
+
 @Singleton
 public class CustomViewModelFactory implements ViewModelProvider.Factory {
-//    private final ArrayMap<Class, Callable<? extends ViewModel>> creators;
+    //    private final ArrayMap<Class, Callable<? extends ViewModel>> creators;
 //
 //    @Inject
 //    public CustomViewModelFactory(ViewModelSubComponent viewModelSubComponent) {
@@ -47,7 +49,7 @@ public class CustomViewModelFactory implements ViewModelProvider.Factory {
 //            throw new RuntimeException(e);
 //        }
 //    }
-private final Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;
+    private final Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;
 
     @Inject
     public CustomViewModelFactory(Map<Class<? extends ViewModel>, Provider<ViewModel>> creators) {

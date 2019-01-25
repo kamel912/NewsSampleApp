@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Team VII By Mohamed Kamel.
+ */
+
 package com.teamvii.news.di;
 
 import android.arch.lifecycle.ViewModel;
@@ -14,7 +18,9 @@ public abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(CategoriesViewModel.class)
-    abstract ViewModel bindCategoriesViewModel(CategoriesViewModel categoriesViewModel);@Binds
+    abstract ViewModel bindCategoriesViewModel(CategoriesViewModel categoriesViewModel);
+
+    @Binds
 
     @IntoMap
     @ViewModelKey(PostsViewModel.class)

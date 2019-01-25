@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019. Team VII By Mohamed Kamel.
+  -->
+
 <resources>
     <color name="colorPrimary">#6989FF</color>
     <color name="colorPrimaryDark">#275dcb</color>
-    <color name="colorPrimaryLight">#a0b9ff</color>
     <color name="colorAccent">#D81B60</color>
 
 

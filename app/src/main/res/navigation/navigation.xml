@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2019. Team VII By Mohamed Kamel.
+  -->
+
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navigation"
     app:startDestination="@id/categoriesFragment">
 
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.teamvii.news.fragments.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" >
+        tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/action_categoriesFragment_to_postsFragment"
-            app:destination="@id/postsFragment" >
+            app:destination="@id/postsFragment">
             <argument
                 android:name="@string/category_id"
                 android:defaultValue="1"
                 app:argType="integer" />
+            <argument
+                android:name="@string/category_title"
+                app:argType="string" />
 
         </action>
     </fragment>
@@ -29,5 +35,8 @@
             android:name="@string/category_id"
             android:defaultValue="1"
             app:argType="integer" />
+        <argument
+            android:name="@string/category_title"
+            app:argType="string" />
     </fragment>
 </navigation>
