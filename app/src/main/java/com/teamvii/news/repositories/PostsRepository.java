@@ -24,14 +24,15 @@ public class PostsRepository {
     private ApiService apiService;
     private final String SORT_TYPE = "recent";
     private final int PAGE_LIMIT = 10;
+    MutableLiveData<PostsList> data;
 
     @Inject
     PostsRepository(ApiService apiService) {
         this.apiService = apiService;
+        data = new MutableLiveData<>();
     }
 
     public LiveData<PostsList> getPosts(int categoryId, int pageNumber) {
-        final MutableLiveData<PostsList> data = new MutableLiveData<>();
         apiService.getPosts(categoryId, SORT_TYPE, pageNumber, PAGE_LIMIT, APP_ID, APP_SECRET, NetworkUtils.getSignature(
                 String.valueOf(categoryId),
                 SORT_TYPE,

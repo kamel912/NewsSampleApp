@@ -11,7 +11,7 @@ public class PostsList {
     @SerializedName("meta")
     @Expose
     private PostsMeta postsMeta;
-    @SerializedName("posts")
+    @SerializedName("data")
     @Expose
     private List<Post> posts = null;
 
